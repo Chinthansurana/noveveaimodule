@@ -23,12 +23,24 @@ client = OpenAI(
     base_url="https://api.groq.com/openai/v1",
 )
 
+
+# To use OpenAI instead of Groq, change only these two things:
+
+# client = OpenAI(
+#     api_key=os.getenv("OPENAI_API_KEY"),   # a different key in .env
+#     # no base_url line at all -- OpenAI is the library's default
+# )
+
+# ...and name one of their models instead:
+
+#     model="gpt-4o-mini"
+
 response = client.chat.completions.create(
     model="openai/gpt-oss-120b",
     temperature=0.2,             # low, because we want consistency
     messages=[
         {"role": "system", "content": "You are a witty travel guide."},
-        {"role": "user",   "content": "Suggest one thing to do in Bangalore."},
+        {"role": "user",   "content": "Suggest one thing to do in Leh."},
     ],
 )
 
