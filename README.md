@@ -1,24 +1,22 @@
-# First call
+# Noveve AI module
 
-One Python file. It loads a Groq key, asks for one thing to do in Bangalore, and prints the reply.
+Hands-on Python demos for the AI module. One folder per class. Shared install at the repo root; each class keeps its own `.env` next to the script.
 
-Get a key at [console.groq.com/keys](https://console.groq.com/keys). It starts with `gsk_`.
+## Setup once
 
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
-cp .env.example .env
 ```
 
-Open `.env` and put your key on the line, with no spaces around the `=`:
+Get a Groq key at [console.groq.com/keys](https://console.groq.com/keys). It starts with `gsk_`.
 
-```
-GROQ_API_KEY=gsk_your_key_here
-```
+## Classes
 
-```bash
-python first_call.py
-```
+| Class | Folder | What you build |
+| --- | --- | --- |
+| 1 | [`class-01-first-call`](class-01-first-call/) | Load a key, send one chat call, print the reply |
+| 2 | [`class-02-prompt-engineering-basics`](class-02-prompt-engineering-basics/) | Move a tuned prompt into code as a page summarizer |
 
-The call goes to `https://api.groq.com/openai/v1` and uses `openai/gpt-oss-120b`. If the script stops before a reply, the message in the terminal lists the three things to check. Your key stays in `.env`, which git ignores.
+Open the class folder, copy `.env.example` to `.env`, put your key in, then run the Python file in that folder.
